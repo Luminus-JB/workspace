@@ -1,0 +1,39 @@
+#banniere{
+    display: flex;
+    justify-content: center;
+    margin-top: 20%;
+
+
+}
+.bouton_banniere{
+    margin: 1px;
+    height: 70px;
+    width: 70px;
+    border: none;
+    background-size: contain;
+
+}
+
+#lumi{
+    background-image: url("img/lumi-vignette3.png");
+}
+
+#google_plus{
+    background-image: url("img/Google-plus-icon.png");
+}
+
+#twitter{
+    background-image: url("img/Twitter-icon.png");
+}
+
+#facebook{
+    background-image: url("img/Facebook-icon.png");
+}
+
+#youtube{
+    background-image: url("img/Youtube-icon.png");
+}
+
+#linkedin{
+    background-image: url("img/Linkedin-icon.png");
+}

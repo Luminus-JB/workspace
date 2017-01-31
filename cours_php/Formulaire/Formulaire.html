@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Formulaire</title>
+</head>
+<body>
+<!-- la balise form déclare un formulaire avec comme attributs : -->
+<!-- method : qui definit la façon dont les données seront envoyées -->
+<!-- action : qui définit le fichier où seront envoyés les données -->
+<!-- enctype : Permet au navigateur de savoir qu'on va envoyés des fichiers-->
+
+    <form method="post" action="cible.php" enctype="multipart/form-data" >
+
+        <!-- Label attaché à l'input via son pseudo -->
+        <label for="pseudo">Pseudo</label>
+
+        <!-- zone de saisie -->
+        <input type="text" name="pseudo" id="pseudo"/>
+        <br />
+
+        <!-- zone password -->
+        <label for="password">Password</label>
+        <input type="password" name="password" id="password"/><br /><br />
+        <!-- Zone de texte -->
+        <textarea name="message" rows="8" cols="45">Votre message ici</textarea><br />
+
+        <!-- Liste déroulante -->
+        <label for="Choix">Votre Choix</label>
+        <select name="Choix" id="Choix">
+            <option value="Choix1">Choix 1</option>
+            <option value="Choix2">Choix 2</option>
+            <option value="Choix2" selected>Choix 3</option>
+        </select>
+        <br />
+
+        <!-- Cases à cocher -->
+        <input type="checkbox" name="case" id="case" checked />
+        <label for="case">Ma case à cocher</label>
+
+        <!-- Boutons d'options -->
+        <div>Aimez-vous les frites ?</div>
+        <input type="radio" name="frites" value="oui" id="oui" checked />
+        <label for="oui">Oui</label>
+        <input type="radio" name="frites" value="non" id="non" />
+        <label for="non">Non</label>
+
+        <!-- Champs cachés -->
+        <input type="hidden" name="prenom" value="Patrice" />
+
+        <!-- Date -->
+        <br/>
+        <label for="date_naissance">Date de naissance</label>
+        <input type="date" id="date_naissance"/><br/>
+
+        <!-- Envoi de fichier -->
+        <label for="file">Ton avatar</label>
+        <input type="file" name="file"/>
+
+        <!-- Input Valider -->
+        <br /><br />
+        <input type="submit" name="Valider"/>
+    </form>
+</body>
+</html>

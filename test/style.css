@@ -1,0 +1,19 @@
+#conteneur
+{
+    background-color: black;
+    display: flex;
+}
+.element {
+    width: 60px;
+    height: 60px;
+}
+
+#element1{
+    background-color: blue;
+}
+#element2{
+    background-color: red;
+}
+#element3{
+    background-color: green;
+}
