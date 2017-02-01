@@ -2,6 +2,7 @@
     display: flex;
     justify-content: center;
     margin-top: 20%;
+    background-color: aqua;
 
 
 }
@@ -36,4 +37,21 @@
 
 #linkedin{
     background-image: url("img/Linkedin-icon.png");
+}
+
+#corp{
+    background-color: greenyellow;
+}
+
+.dossier{
+    height: 350px;
+    width: 130px;
+    background-size: contain;
+}
+
+#games{
+    background-image: url("img/Gaming-Wallpapers-500px.jpg");
+}
+#dev{
+
 }
