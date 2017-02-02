@@ -1,57 +1,129 @@
 #banniere{
     display: flex;
     justify-content: center;
-    margin-top: 20%;
-    background-color: aqua;
-
-
+    height: auto;
+    width: auto;
+    margin-top: 15%;
+    margin-left: 25%;
+    margin-right: 25%;
+    background-color: chartreuse;
 }
 .bouton_banniere{
-    margin: 1px;
-    height: 70px;
-    width: 70px;
-    border: none;
-    background-size: contain;
-
+    margin: 2px;
+    height: 120px;
+    width: 120px;
+    min-height: 70px;
+    min-width: 70px;
+    background-size: 120px;
 }
-
 #lumi{
     background-image: url("img/lumi-vignette3.png");
 }
-
 #google_plus{
     background-image: url("img/Google-plus-icon.png");
 }
-
 #twitter{
     background-image: url("img/Twitter-icon.png");
 }
-
 #facebook{
     background-image: url("img/Facebook-icon.png");
 }
-
 #youtube{
     background-image: url("img/Youtube-icon.png");
 }
-
 #linkedin{
     background-image: url("img/Linkedin-icon.png");
 }
-
 #corp{
-    background-color: greenyellow;
+    display: flex;
+    /*justify-content: center;*/
+    background-color: aqua;
+    margin-left: 25%;
+    margin-right: 25%;
 }
-
 .dossier{
-    height: 350px;
-    width: 130px;
+    min-height: 420px;
+    width: 200px;
     background-size: contain;
+    margin-left: 31px;
+    margin-right: 31px;
 }
-
 #games{
     background-image: url("img/Gaming-Wallpapers-500px.jpg");
 }
+
 #dev{
+    background-image: url("img/Gaming-Wallpapers-500px.jpg");
+}
+#administratif{
+    background-image: url("img/Gaming-Wallpapers-500px.jpg");
+}
+#divers{
+    background-image: url("img/Gaming-Wallpapers-500px.jpg");
+}
+
+#corp_list {
+    display: flex;
+    justify-content: center;
+    height: 0;
+}
+.list {
+    min-height: 420px;
+    width: 200px;
+    background-size: contain;
+    margin-left: 31px;
+    margin-right: 31px;
+}
+
+/*#games_list{
+    background-color: beige;
+}
+#dev_list{
+    background-color: beige;
+}
+#administratif_list{
+    background-color: beige;
+}
+#divers_list{
+    background-color: beige;
+}*/
+#games,#games_list{
+    overflow: hidden;
+    transition: height 1.5s;
+}
+
+@media all and (max-width: 960px)
+{
+    #banniere{
+        margin-top: 25%;
+        margin-left: 5%;
+        margin-right: 5%;
+    }
+    #corp{
+        margin-left: 16.5%;
+        margin-right: 5%;
+    }
+    .bouton_banniere{
+        height: 100px;
+        width: 100px;
+        border: none;
+        background-size: 100px;
+    }
+    .dossier{
+        height: 320px;
+        width: 170px;
+        background-size: contain;
+        margin-left: 0px;
+        margin-right: 15px;
+    }
+
+    .list{
+        min-height: 320px;
+        width: 170px;
+        background-size: contain;
+        margin-left: 25px;
+        margin-right: 25px;
+    }
 
 }
+
