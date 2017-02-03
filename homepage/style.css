@@ -1,23 +1,77 @@
-#banniere{
+/* DIV GENERALE */
+body{
+    margin-top: 10%;
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
-    height: auto;
-    width: auto;
-    margin-top: 15%;
-    margin-left: 25%;
-    margin-right: 25%;
-    background-color: chartreuse;
 }
-.bouton_banniere{
-    margin: 2px;
-    height: 120px;
-    width: 120px;
-    min-height: 70px;
-    min-width: 70px;
-    background-size: 120px;
+
+header{
+   /* margin-left: 10%;*/
+    height: 95px;
+    width: 600px;
+    display: flex;
+    justify-content: space-between;
 }
+
+nav{
+    margin-top: 1px;
+    height: 445px;
+    max-height: 445px;
+    width: 95px;
+    margin-right: 5px;
+    display: flex;
+    flex-direction: column;
+}
+
+#corp{
+    height: 350px;
+    width: 600px;
+    margin-top: 2px;
+    display: flex;
+    position: static;
+
+ }
+#corp_plus{
+    height: 350px;
+    width: 600px;
+    margin-top: 2px;
+    display: flex;
+    z-index: 5;
+}
+
+@media all and (max-width: 960px) {
+    body{
+        margin-top: 20%;
+    }
+}
+
+/* SOUS-ENSEMBLE NAV */
 #lumi{
     background-image: url("img/lumi-vignette3.png");
+    height: 95px;
+    width: 95px;
+    background-size: 95px;
+}
+#lumi_plus{
+    margin-top: 2px;
+    height: 350px;
+    width: 95px;
+    background-color: green;
+}
+#lumi_plus li {
+    margin-left: 3px;
+    list-style-type: none;
+    text-align: center;
+}
+
+
+/* SOUS-ENSEMBLE HEADER */
+header a {
+    height: 95px;
+    width: 95px;
+    background-color: red;
+    background-size: 95px;
 }
 #google_plus{
     background-image: url("img/Google-plus-icon.png");
@@ -34,96 +88,46 @@
 #linkedin{
     background-image: url("img/Linkedin-icon.png");
 }
-#corp{
-    display: flex;
-    /*justify-content: center;*/
-    background-color: aqua;
-    margin-left: 25%;
-    margin-right: 25%;
+
+/* SOUS-ENSEMBLE CORP */
+
+#corp button {
+    height: 350px;
+    width: 198px;
+    background-color: coral;
+    margin-left: 1.5px;
+    border: 0;
 }
-.dossier{
-    min-height: 420px;
-    width: 200px;
+#corp button:hover{
+    cursor: pointer;
+}
+#corp_plus div {
+    height: 350px;
+    width: 198px;
+    margin-left: 1.5px;
+    text-align: center;
+    background-color: darkgoldenrod;
+}
+#games_button{
+    background-image: url("img/games.jpg");
     background-size: contain;
-    margin-left: 31px;
-    margin-right: 31px;
 }
-#games{
-    background-image: url("img/Gaming-Wallpapers-500px.jpg");
-}
-
-#dev{
-    background-image: url("img/Gaming-Wallpapers-500px.jpg");
-}
-#administratif{
-    background-image: url("img/Gaming-Wallpapers-500px.jpg");
-}
-#divers{
-    background-image: url("img/Gaming-Wallpapers-500px.jpg");
-}
-
-#corp_list {
-    display: flex;
-    justify-content: center;
+#devtools_button{
+    background-image: url("img/games.jpg");
+    background-size: contain;
+}#divers_button{
+     background-image: url("img/games.jpg");
+     background-size: contain;
+ }
+#games , #games_plus {
     height: 0;
-}
-.list {
-    min-height: 420px;
-    width: 200px;
-    background-size: contain;
-    margin-left: 31px;
-    margin-right: 31px;
-}
-
-/*#games_list{
-    background-color: beige;
-}
-#dev_list{
-    background-color: beige;
-}
-#administratif_list{
-    background-color: beige;
-}
-#divers_list{
-    background-color: beige;
-}*/
-#games,#games_list{
     overflow: hidden;
-    transition: height 1.5s;
+    transition: height 1s;
 }
-
-@media all and (max-width: 960px)
-{
-    #banniere{
-        margin-top: 25%;
-        margin-left: 5%;
-        margin-right: 5%;
-    }
-    #corp{
-        margin-left: 16.5%;
-        margin-right: 5%;
-    }
-    .bouton_banniere{
-        height: 100px;
-        width: 100px;
-        border: none;
-        background-size: 100px;
-    }
-    .dossier{
-        height: 320px;
-        width: 170px;
-        background-size: contain;
-        margin-left: 0px;
-        margin-right: 15px;
-    }
-
-    .list{
-        min-height: 320px;
-        width: 170px;
-        background-size: contain;
-        margin-left: 25px;
-        margin-right: 25px;
-    }
-
+#games:target {
+    height: 350px;
+}
+#games_plus:target {
+    height: 350px;
 }
 

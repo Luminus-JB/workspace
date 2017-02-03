@@ -1,13 +1,7 @@
-#something {
-    display: none;
+body p {
 }
-
-#something:target {
-    display: block;
-}
-#img{
-    background-image: url("../homepage/img/lumi-vignette3.png");
-    background-size: 50px;
-    width: 50px;
-    height: 50px;
+body img {
+    left: 0px;
+    top: 0px;
+    z-index: -1;
 }

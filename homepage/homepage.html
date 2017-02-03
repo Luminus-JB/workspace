@@ -5,39 +5,63 @@
     <title>Homepage</title>
     <link rel="stylesheet" type="text/css" href="style.css" />
 </head>
+
 <body>
-
-    <div id="banniere">
-        <a href="https://mail.google.com/mail/u/0/#inbox" title="Gmail" id="lumi" class="bouton_banniere"></a>
-        <a href="https://plus.google.com/?hl=fr" title="Google Plus" id="google_plus" class="bouton_banniere"></a>
-        <a href="https://twitter.com/?lang=fr" title="Twitter" id="twitter" class="bouton_banniere"></a>
-        <a href="https://www.facebook.com/" title="Facebook" id="facebook" class="bouton_banniere"></a>
-        <a href="https://www.youtube.com/'" title="Youtube" id="youtube" class="bouton_banniere"></a>
-        <a href="https://www.linkedin.com/nhome/" title="Linkedin" id="linkedin" class="bouton_banniere"></a>
-        <a href="https://www.linkedin.com/nhome/" title="Linkedin" id="linkedin" class="bouton_banniere"></a>
-        <a href="https://www.linkedin.com/nhome/" title="Linkedin" id="linkedin" class="bouton_banniere"></a>
-    </div>
-
-    <div id="corp_list">
-        <div id="games_list" class="list">
-            <ul>
-                <li><a href="https://plus.google.com/?hl=fr">World of Wacraft</a></li>
+    <script>
+        document.querySelector("#games").onclick = function() {
+            if (window.getComputedStyle(document.querySelector('#games_plus')).display=='none'){
+                document.querySelector("#games_plus").style.display="block";
+            } else {
+                document.querySelector("#games_plus").style.display="none";
+            }
+        }
+    </script>
+    <nav>
+        <div id="lumi"></div>
+        <div id="lumi_plus">
+            <ul></ul>
+            <li><a href="http://www.julien-barras.com/">Mon site</a></li>
+            <li><a href="https://mail.google.com/mail/u/0/#inbox">Mail</a></li>
             </ul>
-
         </div>
-        <div id="dev_list" class="list"></div>
-        <div id="administratif_list" class="list"></div>
-        <div id="divers_list" class="list"></div>
+    </nav>
+
+    <div>
+        <header>
+            <a href="https://plus.google.com/?hl=fr" title="Google Plus" id="google_plus"></a>
+            <a href="https://twitter.com/?lang=fr" title="Twitter" id="twitter"></a>
+            <a href="https://www.facebook.com/" title="Facebook" id="facebook"></a>
+            <a href="https://www.youtube.com/'" title="Youtube" id="youtube"></a>
+            <a href="https://www.linkedin.com/nhome/" title="Linkedin" id="linkedin"></a>
+            <a href="https://www.linkedin.com/nhome/" title="Linkedin" id="linkedin"></a>
+        </header>
+
+        <div id="corp">
+
+            <form method="get" action="#games_plus" title="Games" id="games">
+                <button type="submit" id="games_button"></button>
+            </form>
+            <form method="get" action="#devtools_plus" title="devtools" id="devtools">
+                <button type="submit" id="devtools_button"></button>
+            </form>
+            <form method="get" action="#divers_plus" title="divers" id="divers">
+                <button type="submit" id="divers_button"></button>
+            </form>
+        </div>
+
+        <div id="corp_plus">
+            <div title="Games" id="games_plus">
+                <a href="https://worldofwarcraft.com/fr-fr/">World of Wacraft</a>
+            </div>
+            <div title="devtools" id="devtools_plus">
+                <a href="https://secure.php.net/manual/fr/index.php">PHP Manuel</a>
+            </div>
+            <div title="divers" id="divers_plus">
+                <a href="http://www.speedtest.net/fr/">Test Réseau</a>
+            </div>
+        </div>
+        <p><a href="#games">Fermer</a></p>
     </div>
-
-
-    <div id="corp">
-        <div id="games" class="dossier"></div>
-        <div id="dev" class="dossier"></div>
-        <div id="administratif" class="dossier"></div>
-        <div id="divers" class="dossier"></div>
-    </div>
-
 
 
 </body>
