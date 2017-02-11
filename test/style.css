@@ -1,7 +1,19 @@
-body p {
+#menu{
+    display: block;
+    width: 50px;
+    height: 50px;
+    background-color: red;
+    -webkit-transition: height 2s;
+    transition: height 2s;
 }
-body img {
-    left: 0px;
-    top: 0px;
-    z-index: -1;
+#option{
+    display:none;
+}
+
+#menu:hover {
+    height: 100px;
+}
+
+#menu:hover #option {
+    display: block;
 }

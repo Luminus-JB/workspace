@@ -1,133 +1,175 @@
-/* DIV GENERALE */
-body{
-    margin-top: 10%;
+/* Conteneur généraux */
+body {
     display: flex;
-    flex-wrap: wrap;
     justify-content: center;
-}
-
-header{
-   /* margin-left: 10%;*/
-    height: 95px;
-    width: 600px;
-    display: flex;
-    justify-content: space-between;
-}
-
-nav{
-    margin-top: 1px;
-    height: 445px;
-    max-height: 445px;
-    width: 95px;
-    margin-right: 5px;
-    display: flex;
-    flex-direction: column;
-}
-
-#corp{
-    height: 350px;
-    width: 600px;
-    margin-top: 2px;
-    display: flex;
-    position: static;
-
+    margin-top: 10%;
  }
-#corp_plus{
-    height: 350px;
-    width: 600px;
-    margin-top: 2px;
-    display: flex;
-    z-index: 5;
-}
-
-@media all and (max-width: 960px) {
-    body{
+@media all and (max-width: 1024px) {
+    body {
         margin-top: 20%;
     }
 }
-
-/* SOUS-ENSEMBLE NAV */
-#lumi{
-    background-image: url("img/lumi-vignette3.png");
-    height: 95px;
-    width: 95px;
-    background-size: 95px;
+#nav {
+    margin-top: 1px;
 }
-#lumi_plus{
-    margin-top: 2px;
-    height: 350px;
-    width: 95px;
-    background-color: green;
+#corp {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
-#lumi_plus li {
-    margin-left: 3px;
-    list-style-type: none;
-    text-align: center;
+#header {
+    display: flex;
+    justify-content: center;
+}
+#menu {
+    display: flex;
 }
 
+/*---------------------------------------------*/
 
-/* SOUS-ENSEMBLE HEADER */
-header a {
-    height: 95px;
-    width: 95px;
+/* Mise en mode block */
+#lumi {
+    display: block;
+    height: 100px;
+    width: 100px;
+    background-color: black;
+    color: white;
+}
+#header a {
+    display: block;
+    height: 100px;
+    width: 100px;
     background-color: red;
-    background-size: 95px;
+    margin: 1px;
+}
+#menu div {
+    display: block;
+    height: 350px;
+    width: 202px;
+    margin: 1px;
+}
+#gaming a, #devtools a, #administratif a, #divers a {
+    margin-top: 25px;
+    display: flex;
+    justify-content: center;
+}
+/*---------------------------------------------*/
+
+/* Permet l'affichage de la liste perso lors du hover sur lumi */
+#lien_perso a {
+    display: none;
+}
+#nav:hover #lien_perso a {
+    display: block;
+}
+
+/* Enlève le background et affiche le contenu du palet gaming */
+#gaming_conteneur:hover {
+    background-image: none;
+}
+#gaming_conteneur:hover #gaming {
+    visibility: visible;
+}
+
+/* Enlève le background et affiche le contenu du palet devtools */
+#devtools_conteneur:hover{
+    background-image: none;
+}
+#devtools_conteneur:hover #devtools {
+    visibility: visible;
+}
+
+/* Enlève le background et affiche le contenu du palet administratif */
+#administratif_conteneur:hover{
+    background-image: none;
+}
+#administratif_conteneur:hover #administratif {
+    visibility: visible;
+}
+
+/* Enlève le background et affiche le contenu du palet divers */
+#divers_conteneur:hover {
+    background-image: none;
+}
+#divers_conteneur:hover #divers {
+    visibility: visible;
+}
+/*---------------------------------------------*/
+
+/* Background des palets du menu */
+#gaming_conteneur{
+    background-image: url("img/dés.jpg");
+}
+#devtools_conteneur{
+    background-image: url("img/devtools.jpeg");
+}
+#administratif_conteneur{
+    background-image: url("img/administratif2.jpg");
+}
+#divers_conteneur {
+    background-image: url("img/divers.jpeg");
+}
+/* Background des palets du header */
+#lumi {
+    background-image: url("img/lumi-vignette3.png");
+    background-size: contain;
 }
 #google_plus{
     background-image: url("img/Google-plus-icon.png");
+    background-size: contain;
 }
 #twitter{
     background-image: url("img/Twitter-icon.png");
+    background-size: contain;
 }
 #facebook{
     background-image: url("img/Facebook-icon.png");
+    background-size: contain;
 }
 #youtube{
     background-image: url("img/Youtube-icon.png");
+    background-size: contain;
 }
 #linkedin{
     background-image: url("img/Linkedin-icon.png");
-}
-
-/* SOUS-ENSEMBLE CORP */
-
-#corp button {
-    height: 350px;
-    width: 198px;
-    background-color: coral;
-    margin-left: 1.5px;
-    border: 0;
-}
-#corp button:hover{
-    cursor: pointer;
-}
-#corp_plus div {
-    height: 350px;
-    width: 198px;
-    margin-left: 1.5px;
-    text-align: center;
-    background-color: darkgoldenrod;
-}
-#games_button{
-    background-image: url("img/games.jpg");
     background-size: contain;
 }
-#devtools_button{
-    background-image: url("img/games.jpg");
+#vide{
+    background-image: url("img/bonhomme-blanc-vide-without-cadre.jpg");
     background-size: contain;
-}#divers_button{
-     background-image: url("img/games.jpg");
-     background-size: contain;
- }
-#games , #games_plus {
-    height: 0;
-    overflow: hidden;
-    transition: height 1s;
 }
-#games:target {
-    height: 350px;
+/*---------------------------------------------*/
+
+/* Cache le contenu des palets */
+#gaming,#devtools,#administratif,#divers{
+    visibility: hidden;
 }
-#games_plus:target {
-    height: 350px;
+/*---------------------------------------------*/
+
+/* Police */
+@font-face {
+    font-family: 'flamencolight';
+    src: url('font/flamenco-light-webfont.woff2') format('woff2'),
+    url('font/flamenco-light-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+@font-face {
+    font-family: 'flamencoregular';
+    src: url('font/flamenco-regular-webfont.woff2') format('woff2'),
+    url('font/flamenco-regular-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+#lien_perso a, #gaming a, #devtools a, #administratif a, #divers a {
+    font-family: "flamencoregular","Arial";
+}
+/*---------------------------------------------*/
+
+#lien_perso a:link, #lien_perso a:visited, #lien_perso a:hover, #lien_perso a:active  {
+    color:black;
 }
 

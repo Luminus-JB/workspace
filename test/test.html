@@ -1,74 +1,24 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>Les calques en CSS avec le z-index</title>
+    <title>Demo</title>
+
     <style type="text/css">
-        *
-        {
-            margin:0px;
-            padding:0px;
+        .logo {
+            width:100px; height:100px; margin-top:5px; margin-left:5px; background-color:#123456;
+
+            position:fixed; z-index:0; float:left;
         }
-        body
-        {
-            padding-left:5px;
-        }
-        .remarque
-        {
-            background:#a0ffa0;
-            border:1px solid #508050;
-            padding:3px;
-        }
-        .elem_1, .elem_2, .elem_3, .elem_4
-        {
-            border:1px solid #666666;
-            background:#999999;
-            padding:50px;
-            width:200px;
-            text-align:center;
-        }
-        .elem_1
-        {
-            position:static;
-            z-index:200;
-        }
-        .elem_2
-        {
-            position:absolute;
-            top:100px;
-            left:200px;
-            z-index:5;
-        }
-        .elem_3
-        {
-            position:relative;
-            top:-70px;
-            left:195px;
-            z-index:-5;
-        }
-        .elem_4
-        {
-            position:fixed;
-            top:200px;
-            left:400px;
-            z-index:10;
+
+        .logo:hover {
+            width:200px; height:120px; background-color:#654321;
+
+            z-index:1000;
         }
     </style>
 </head>
+
 <body>
-<h1>Les calques(z-index) en CSS</h1>
-<br /><br /><br /><br /><br /><br /><br /><br />
-<div class="elem_1">
-    Un calque en position static avec un z-index de 200
-</div><br />
-<div class="elem_2">
-    Un calque en position absolute avec un z-index de 5
-</div><br />
-<div class="elem_3">
-    Un calque en position relative avec un z-index de -5
-</div><br />
-<div class="elem_4">
-    Un calque en position fixed avec un z-index de 10
-</div><br />
+<div class="logo">Test1</div>
+<div class="logo" style="margin-left:110px;">Test2</div>
+<div class="logo" style="margin-left:215px;">Test3</div>
+
 </body>
-</html>
