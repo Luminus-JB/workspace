@@ -11,6 +11,8 @@ body {
 }
 #nav {
     margin-top: 1px;
+    display: flex;
+    flex-direction: column;
 }
 #corp {
     display: flex;
@@ -23,6 +25,7 @@ body {
 }
 #menu {
     display: flex;
+    margin-top: 16px;
 }
 
 /*---------------------------------------------*/
@@ -32,8 +35,13 @@ body {
     display: block;
     height: 100px;
     width: 100px;
-    background-color: black;
     color: white;
+}
+#lien_perso{
+    display: block;
+    background-image: url("img/nav.jpeg");
+    height: 350px;
+    width: 100px;
 }
 #header a {
     display: block;
@@ -58,9 +66,14 @@ body {
 /* Permet l'affichage de la liste perso lors du hover sur lumi */
 #lien_perso a {
     display: none;
+    font-size: 200%;
 }
 #nav:hover #lien_perso a {
     display: block;
+
+}
+#nav:hover #lien_perso{
+    background-image: none;
 }
 
 /* Enlève le background et affiche le contenu du palet gaming */
@@ -104,7 +117,7 @@ body {
     background-image: url("img/devtools.jpeg");
 }
 #administratif_conteneur{
-    background-image: url("img/administratif2.jpg");
+    background-image: url("img/administratif.jpg");
 }
 #divers_conteneur {
     background-image: url("img/divers.jpeg");
@@ -134,6 +147,14 @@ body {
     background-image: url("img/Linkedin-icon.png");
     background-size: contain;
 }
+#github{
+    background-image: url("img/Linkedin-icon.png");
+    background-size: contain;
+}
+#evernote{
+    background-image: url("img/Linkedin-icon.png");
+    background-size: contain;
+}
 #vide{
     background-image: url("img/bonhomme-blanc-vide-without-cadre.jpg");
     background-size: contain;
@@ -153,7 +174,6 @@ body {
     url('font/flamenco-light-webfont.woff') format('woff');
     font-weight: normal;
     font-style: normal;
-
 }
 @font-face {
     font-family: 'flamencoregular';
@@ -161,15 +181,40 @@ body {
     url('font/flamenco-regular-webfont.woff') format('woff');
     font-weight: normal;
     font-style: normal;
-
+}
+@font-face {
+    font-family: 'lane_-_narrowregular';
+    src: url('font/lanenar_-webfont.woff2') format('woff2'),
+    url('font/lanenar_-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
 }
 
 #lien_perso a, #gaming a, #devtools a, #administratif a, #divers a {
-    font-family: "flamencoregular","Arial";
+    font-family: "lane_-_narrowregular","Arial";
 }
 /*---------------------------------------------*/
 
-#lien_perso a:link, #lien_perso a:visited, #lien_perso a:hover, #lien_perso a:active  {
+#lien_perso a:link, #lien_perso a:visited, #lien_perso a:active{
     color:black;
+    text-decoration: none;
+    font-size: 20px;
 }
+#lien_perso a:hover{
+    color: darkgrey;
+}
+#gaming a:link, #gaming a:visited, #gaming a:active,
+#devtools a:link, #devtools a:visited, #devtools a:active,
+#administratif a:link, #administratif a:visited, #administratif a:active,
+#divers a:link, #divers a:visited, #divers a:active
+{
+    color:black;
+    text-decoration: none;
+    font-size: 20px;
+}
+#gaming a:hover, #devtools a:hover, #administratif a:hover, #divers a:hover{
+    color: darkgrey;
+}
+
+
 
