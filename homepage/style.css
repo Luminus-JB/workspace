@@ -6,7 +6,10 @@ body {
  }
 @media all and (max-width: 1024px) {
     body {
-        margin-top: 20%;
+        margin-top: 25%;
+    }
+    #signature{
+        margin-top: none;
     }
 }
 #nav {
@@ -27,7 +30,11 @@ body {
     display: flex;
     margin-top: 16px;
 }
-
+#signature{
+    font-size: 20px;
+    margin-top: 30%;
+    font-family: "infinite_strokeregular","fibon_sansthin","lane_-_narrowregular","Arial";
+}
 /*---------------------------------------------*/
 
 /* Mise en mode block */
@@ -47,7 +54,6 @@ body {
     display: block;
     height: 100px;
     width: 100px;
-    background-color: red;
     margin: 1px;
 }
 #menu div {
@@ -60,6 +66,12 @@ body {
     margin-top: 25px;
     display: flex;
     justify-content: center;
+}
+#devtools a {
+    height: 10px;
+}
+#administratif a {
+    height: 45px;
 }
 /*---------------------------------------------*/
 
@@ -127,8 +139,8 @@ body {
     background-image: url("img/lumi-vignette3.png");
     background-size: contain;
 }
-#google_plus{
-    background-image: url("img/Google-plus-icon.png");
+#gmail{
+    background-image: url("img/Gmail-icon.png");
     background-size: contain;
 }
 #twitter{
@@ -148,15 +160,15 @@ body {
     background-size: contain;
 }
 #github{
-    background-image: url("img/Linkedin-icon.png");
+    background-image: url("img/Github-icon (1).png");
     background-size: contain;
 }
 #evernote{
-    background-image: url("img/Linkedin-icon.png");
+    background-image: url("img/evernote-icon (2).png");
     background-size: contain;
 }
-#vide{
-    background-image: url("img/bonhomme-blanc-vide-without-cadre.jpg");
+#dropbox{
+    background-image: url("img/Dropbox-ico.png");
     background-size: contain;
 }
 /*---------------------------------------------*/
@@ -169,29 +181,30 @@ body {
 
 /* Police */
 @font-face {
-    font-family: 'flamencolight';
-    src: url('font/flamenco-light-webfont.woff2') format('woff2'),
-    url('font/flamenco-light-webfont.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
-}
-@font-face {
-    font-family: 'flamencoregular';
-    src: url('font/flamenco-regular-webfont.woff2') format('woff2'),
-    url('font/flamenco-regular-webfont.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
-}
-@font-face {
     font-family: 'lane_-_narrowregular';
     src: url('font/lanenar_-webfont.woff2') format('woff2'),
     url('font/lanenar_-webfont.woff') format('woff');
     font-weight: normal;
     font-style: normal;
 }
+@font-face {
+    font-family: 'fibon_sansthin';
+    src: url('font/fibon_sans_regular-webfont.woff2') format('woff2'),
+    url('font/fibon_sans_regular-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'infinite_strokeregular';
+    src: url('font/infinite_stroke-webfont.woff2') format('woff2'),
+    url('font/infinite_stroke-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
 
 #lien_perso a, #gaming a, #devtools a, #administratif a, #divers a {
-    font-family: "lane_-_narrowregular","Arial";
+    font-family: "fibon_sansthin","lane_-_narrowregular","Arial";
 }
 /*---------------------------------------------*/
 
