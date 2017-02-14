@@ -28,7 +28,7 @@ body {
 }
 #menu {
     display: flex;
-    margin-top: 16px;
+    margin-top: px;
 }
 #signature{
     font-size: 20px;
@@ -42,13 +42,17 @@ body {
     display: block;
     height: 100px;
     width: 100px;
-    color: white;
 }
 #lien_perso{
     display: block;
-    background-image: url("img/nav.jpeg");
+    /*background-image: url("img/nav.jpeg");*/
     height: 350px;
     width: 100px;
+    /*margin-top: 18px;*/
+}
+#lien_perso a {
+    display: block;
+    margin-top: 10px;
 }
 #header a {
     display: block;
@@ -74,19 +78,6 @@ body {
     height: 45px;
 }
 /*---------------------------------------------*/
-
-/* Permet l'affichage de la liste perso lors du hover sur lumi */
-#lien_perso a {
-    display: none;
-    font-size: 200%;
-}
-#nav:hover #lien_perso a {
-    display: block;
-
-}
-#nav:hover #lien_perso{
-    background-image: none;
-}
 
 /* Enlève le background et affiche le contenu du palet gaming */
 #gaming_conteneur:hover {
@@ -123,52 +114,52 @@ body {
 
 /* Background des palets du menu */
 #gaming_conteneur{
-    background-image: url("img/dés.jpg");
+    background-image: url("../img/dés.jpg");
 }
 #devtools_conteneur{
-    background-image: url("img/devtools.jpeg");
+    background-image: url("../img/devtools.jpeg");
 }
 #administratif_conteneur{
-    background-image: url("img/administratif.jpg");
+    background-image: url("../img/administratif.jpg");
 }
 #divers_conteneur {
-    background-image: url("img/divers.jpeg");
+    background-image: url("../img/divers.jpeg");
 }
 /* Background des palets du header */
 #lumi {
-    background-image: url("img/lumi-vignette3.png");
+    background-image: url("../img/lumi-vignette3.png");
     background-size: contain;
 }
 #gmail{
-    background-image: url("img/Gmail-icon.png");
+    background-image: url("../img/Gmail-icon.png");
     background-size: contain;
 }
 #twitter{
-    background-image: url("img/Twitter-icon.png");
+    background-image: url("../img/Twitter-icon.png");
     background-size: contain;
 }
 #facebook{
-    background-image: url("img/Facebook-icon.png");
+    background-image: url("../img/Facebook-icon.png");
     background-size: contain;
 }
 #youtube{
-    background-image: url("img/Youtube-icon.png");
+    background-image: url("../img/Youtube-icon.png");
     background-size: contain;
 }
 #linkedin{
-    background-image: url("img/Linkedin-icon.png");
+    background-image: url("../img/Linkedin-icon.png");
     background-size: contain;
 }
 #github{
-    background-image: url("img/Github-icon (1).png");
+    background-image: url("../img/Github-icon (1).png");
     background-size: contain;
 }
 #evernote{
-    background-image: url("img/evernote-icon (2).png");
+    background-image: url("../img/evernote-icon (2).png");
     background-size: contain;
 }
 #dropbox{
-    background-image: url("img/Dropbox-ico.png");
+    background-image: url("../img/Dropbox-ico.png");
     background-size: contain;
 }
 /*---------------------------------------------*/
@@ -182,22 +173,22 @@ body {
 /* Police */
 @font-face {
     font-family: 'lane_-_narrowregular';
-    src: url('font/lanenar_-webfont.woff2') format('woff2'),
-    url('font/lanenar_-webfont.woff') format('woff');
+    src: url('../font/lanenar_-webfont.woff2') format('woff2'),
+    url('../font/lanenar_-webfont.woff') format('woff');
     font-weight: normal;
     font-style: normal;
 }
 @font-face {
     font-family: 'fibon_sansthin';
-    src: url('font/fibon_sans_regular-webfont.woff2') format('woff2'),
-    url('font/fibon_sans_regular-webfont.woff') format('woff');
+    src: url('../font/fibon_sans_regular-webfont.woff2') format('woff2'),
+    url('../font/fibon_sans_regular-webfont.woff') format('woff');
     font-weight: normal;
     font-style: normal;
 }
 @font-face {
     font-family: 'infinite_strokeregular';
-    src: url('font/infinite_stroke-webfont.woff2') format('woff2'),
-    url('font/infinite_stroke-webfont.woff') format('woff');
+    src: url('../font/infinite_stroke-webfont.woff2') format('woff2'),
+    url('../font/infinite_stroke-webfont.woff') format('woff');
     font-weight: normal;
     font-style: normal;
 
