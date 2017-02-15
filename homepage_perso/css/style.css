@@ -35,6 +35,9 @@ body {
     margin-top: 30%;
     font-family: "infinite_strokeregular","fibon_sansthin","lane_-_narrowregular","Arial";
 }
+#compteur{
+    font-size: 15px;
+}
 /*---------------------------------------------*/
 
 /* Mise en mode block */
@@ -77,6 +80,10 @@ body {
 #administratif a {
     height: 45px;
 }
+#signature p {
+    text-align: center;
+}
+
 /*---------------------------------------------*/
 
 /* Enlève le background et affiche le contenu du palet gaming */
