@@ -1,0 +1,89 @@
+    body {
+    font-family:"trebuchet ms",sans-serif;
+    font-size:90%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    }
+    form {
+        padding:10px;
+        width:280px;
+    }
+    fieldset {
+        padding:0 20px 20px 20px;
+        margin-bottom:10px;
+        border:1px solid #DF3F3F;
+    }
+    legend {
+        color:#DF3F3F;
+        font-weight:bold
+    }
+    label {
+        margin-top:10px;
+        display:block;
+    }
+    input, textarea, select, option {
+        background-color:#FFF3F3;
+    }
+    input, textarea, select {
+        padding:3px;
+        border:1px solid #F5C5C5;
+        border-radius:5px;
+        width:200px;
+        box-shadow:1px 1px 2px #C0C0C0 inset;
+    }
+input[type=submit], input[type=reset] {
+    width:100px;
+    margin-left:5px;
+    box-shadow:1px 1px 1px #D83F3D;
+    cursor:pointer;
+}
+input[type=submit]:hover, input[type=reset]:hover {
+    background-color:#FCDEDE;
+}
+input[type=submit]:active, input[type=reset]:active {
+    background-color:#FCDEDE;
+    box-shadow:1px 1px 1px #D83F3D inset;
+}
+#error_pwd_conteneur{
+    display: flex;
+    justify-content: center;
+}
+#error{
+    font-size: 15px;
+    display: block;
+    margin-top: 10px;
+}
+#box_message {
+    background-color: #FFF3F3;
+    display: block;
+    padding:3px;
+    border:1px solid #F5C5C5;
+    border-radius:5px;
+    width:300px;
+    box-shadow:1px 1px 2px #C0C0C0 inset;
+}
+#refresh {
+    display: block;
+    width: 20px;
+    height: 20px;
+    background-image: url("../img/refresh2.png");
+    background-size: contain;
+}
+#historique {
+    display: flex;
+}
+#precedent{
+    display: block;
+    width: 20px;
+    height: 20px;
+    background-image: url("../img/precedent.png");
+    background-size: contain;
+}
+#suivant {
+    display: block;
+    width: 20px;
+    height: 20px;
+    background-image: url("../img/suivant.png");
+    background-size: contain;
+}

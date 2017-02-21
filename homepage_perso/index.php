@@ -40,7 +40,7 @@
                     <a href="https://worldofwarcraft.com/fr-fr/">World of Warcraft</a><br/>
                     <a href="http://euw.leagueoflegends.com/fr">League of legend</a><br/>
                     <a href="http://www.championselect.net/">Champion Select</a><br/>
-                    <a href="http://www.lolnexus.com/champions">LoL Pro</a><br/>
+                    <a href="http://www.lolnexus.com/EUW/search?name=luminus&region=EUW">LoL Nexus</a><br/>
                     <a href="http://warlockspirit.com/">Warlock Spirit</a><br/>
 
                 </div>
