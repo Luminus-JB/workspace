@@ -11,5 +11,7 @@ $titre = "Lumi's Blog";
 include("./includes/connect_db.php");
 //Contient le header et le titre principal
 include("./includes/debut.php");
+// On récupère le nombre de billet présent ds la db
+include("./includes/nbre_billets.php");
 //Affiche les 5 derniers billets
 include("./includes/show_billets.php");
