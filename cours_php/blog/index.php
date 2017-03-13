@@ -15,3 +15,5 @@ include("./includes/debut.php");
 include("./includes/nbre_billets.php");
 //Affiche les 5 derniers billets
 include("./includes/show_billets.php");
+//Affiche la pagination
+include("./includes/pagination.php");

@@ -5,8 +5,9 @@
  * Date: 27/02/2017
  * Time: 16:39
  */
+$premiereEntree=($pageActuelle-1)*$messagesParPage; // On calcul la première entrée à lire
 
-$reponse = $db->query('SELECT id, titre, contenu, DATE_FORMAT(date_creation, "%d/%m/%Y à %Hh%imin%ss") AS date_crea FROM billets ORDER BY date_creation DESC LIMIT 0,5');
+$reponse = $db->query('SELECT id, titre, contenu, DATE_FORMAT(date_creation, "%d/%m/%Y à %Hh%imin%ss") AS date_crea FROM billets ORDER BY date_creation LIMIT '.$premiereEntree.','.$messagesParPage.'');
 
 while ($donnees = $reponse->fetch())
 {

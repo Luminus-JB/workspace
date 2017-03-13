@@ -3,10 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <title>Homepage</title>
-    <link rel="stylesheet" type="text/css" href="css/style.css" />
+    <link rel="stylesheet" type="text/css" href="css/styles.css" />
     <script type="text/javascript" src="monscript.js"></script>
-
-
 </head>
 
 <body>
@@ -16,8 +14,8 @@
             <a href="http://www.julien-barras.com/">Mon Site</a><br />
             <a href="http://www.julien-barras.fr/">Mon CV</a><br />
             <a href="https://login.live.com/login.srf?wa=wsignin1.0&rpsnv=13&ct=1486905681&rver=6.7.6636.0&wp=MBI_SSL&wreply=https:%2f%2faccount.microsoft.com%2fauth%2fcomplete-signin%3fru%3dhttps%253a%252f%252faccount.microsoft.com%252f%253fref%253dMeControl%2526lang%253dfr-FR%2526partnerId%253dxboxcomuhf%2526partnerDomain%253daccount.xbox.com%2526refd%253daccount.microsoft.com%2526refp%253dhome-about-index&lc=1036&id=292666&lw=1&fl=easi2&pcexp=true&uictx=me">Windows Login</a><br />
-            <a href=""></a><br />
-            <a href=""></a><br />
+            <a href="http://localhost/phpmyadmin/">phpMyAdmin</a><br />
+            <a href="http://localhost/">Localhost</a><br />
             <a href=""></a><br />
         </div>
     </div>
