@@ -1,8 +1,8 @@
 /* Conteneur généraux */
-body {
+#lien {
     display: flex;
     justify-content: center;
-    margin-top: 10%;
+    margin-top: 3px;
  }
 #nav {
     margin-top: 1px;
@@ -32,6 +32,11 @@ body {
 /*---------------------------------------------*/
 
 /* Mise en mode block */
+#google {
+    height: 30px;
+    width: 600px;
+    margin-top: 10%;
+}
 #lumi {
     display: block;
     height: 100px;
