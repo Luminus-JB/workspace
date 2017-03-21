@@ -6,7 +6,7 @@
  * Time: 16:12
  */
 //Contient la connexion à la db
-include("includes/connect_db.php");
+include("includes_minichat/connect_db.php");
 //On récupère les variables envoyés par le formulaire
 $pseudo = $_POST['pseudo'];
 $message = $_POST['message'];
@@ -32,6 +32,6 @@ $req->execute(array(
 'message' => $message
 ));
 
-header('Location: index.php');
+header('Location: minichat.php');
 
 ?>
