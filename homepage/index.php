@@ -41,7 +41,7 @@
                 <a href="https://contacts.google.com/" id="contact" class="second_link" title="contact"></a>
                 <a href="https://calendar.google.com/calendar/render?tab=mc&pli=1#main_7" id="agenda" class="second_link" title="agenda"></a>
                 <a href="https://photos.google.com/?pageId=none" id="photos" class="second_link" title="photos"></a>
-                <a href="" id="config" class="second_link" title="accès admin"></a>
+                <a href="connect_admin.php" id="config" class="second_link" title="accès admin"></a>
 
             </div>
         </div>
