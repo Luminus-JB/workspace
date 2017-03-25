@@ -11,7 +11,7 @@ if (isset($_COOKIE['pseudo_user'])){
     $pseudo_user = "";
 }
 echo '<body>
-    <form method="post" action="register.php" enctype="multipart/form-data" >
+    <form method="post" action="register_minichat.php" enctype="multipart/form-data" >
          <!-- zone pseudo -->
          <label for="pseudo">Pseudo</label>
          <input type="text" name="pseudo" id="pseudo" value="'.$pseudo_user.'"><br /><br />

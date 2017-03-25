@@ -14,5 +14,5 @@
     echo (!empty($titre))?'<title>'.$titre.'</title>':'<title> Forum </title>';
     ?>
     <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
-    <link rel="stylesheet" media="screen" type="text/css" title="Design" href="css/style_minichat.css" />
+    <link rel="stylesheet" media="screen" type="text/css" title="Design" href="css/minichat_style.css" />
 </head>

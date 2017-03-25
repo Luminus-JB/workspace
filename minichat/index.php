@@ -8,16 +8,16 @@
 //Définition de la variable titre pour le <title>
 $titre = "minichat";
 //Contient la connexion à la db
-include("./includes/connect_db.php");
+include("includes_minichat/connect_db.php");
 //Contient le header
-include("./includes/debut.php");
+include("includes_minichat/debut.php");
 //Formulaire saisie pseudo & message
-include("./includes/formulaire.php");
+include("includes_minichat/formulaire.php");
 //Affiche les derniers messages et le bouton actualiser
-include("./includes/show.php");
+include("includes_minichat/show.php");
 
 
-//Si on peut récupérer la variable superglobales GET
+//Si on peut récupérer la variable superglobale GET
 if (isset($_GET['precedent'])) {
     $valeur = (int) $_GET['precedent'] + 1;//incrementation de la variable
     //Si il ya plus de 10 messages dans l'historique
@@ -38,12 +38,14 @@ if (isset($_GET['precedent'])) {
     $valeur = 1;//Si pas de variable superglobales
 }
 //ferme la div contenant l'affichage des messages et ouvre le conteneur des liens
-echo '</div><div id="historique">
+echo '</div><br/><div id="historique">
 <!-- Lien permettant le transfert de la valeur à la requête SQL permettant laffichage des messages -->
 <a id="precedent" title="message précédent" href="index.php?precedent='. $valeur .'"></a>
 <a title="actualiser" href="index.php" id="refresh"></a>
 <a id="suivant" title=" message suivant" href="index.php?suivant='. $valeur .'"></a></div>';
 
+echo '<br/><p id="info2">' . 'Pour voir les nouveaux messages, veuillez actualiser :)</p>';
 
 //Affiche le fin de la page html
-include("./includes/footer.php");
+include("includes_minichat/footer.php");
+
