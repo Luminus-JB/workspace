@@ -9,7 +9,7 @@
  * INCLUDES
  */
 //Contient le header
-include("includes/admin_header.php");
+include("includes/admin_header.html");
 //Contient la connexion à la db
 include("includes/connect_db.php");
 //Contient les fonctions
@@ -20,157 +20,319 @@ include("function.php");
  */
 
 // Déclarations et fonctions pour la zone link head
-$i = 1;
 $table = 'link_head';
 // Renvoie le nombre de place totale dans la table en paramètre
-$nbr_place = nbrPlace($table);
 // Liste de tous les emplacements disponibles dans le nav
 $list_total_place = array(1, 2, 3, 4, 5, 6, 7, 8);
 // Compare la liste des places occupés et la liste des places totales en paramètres et renvoie la liste des places libres dans un array
-$list_free_place = listFreePlace($list_total_place, $table);
+$list_free_place = listFreePlace($table, $list_total_place);
+// Récupère la liste croissante des places disponibles dans la table en paramètre.
+$list_empty_place = listEmptyPlace($table);
 
-if ($list_free_place != NULL){
-    $styles_css = "style.css";
-}else{
-    $styles_css = "style_link_full.css";
-}
+//Redirection vers la homepage
+echo '<a href="../index.php">Retour à la homepage</a>';
 // Formulaire partie 1
 include("includes/form_link_head/form_part_1.html");
 //Tant que $i est plus petit que le nombre de lignes dans la db link_nav
-while ($i <= $nbr_place) {
-    echo '<option>' . $i;
-    $i++;
+foreach ($list_empty_place as $value) {
+    echo '<option>' . $value;
 }
-// Formulaire partie 2
-include("includes/form_link_head/form_part_2.html");
+
+echo '</select><br/><br/>
+<label for="img_link_head">Icône du fichier (JPG, PNG ou GIF | max. 15 Ko) :</label>
+<input type="file" name="img_link_head"/><br/><br/>
+<input type="submit" value="Modifier"/><br /><br />
+</form>';
+
+echo'<h3>Ajout Lien</h3>';
+
+if (empty($list_free_place)) {
+    echo '<p>Limite de lien atteinte, veuillez d\'abord en supprimer un.</p>';
+}
+echo '<form method="post" action="register_link.php" enctype="multipart/form-data" >
+    <label for="add_link_head" class="' . $class = freeOrFull($list_free_place) . '">Lien</label>
+    <input type="url" name="add_link_head" id="add_link_head" class="' . $class = freeOrFull($list_free_place) . '"/><br/><br/>
+    <label for="add_name_link_head" class="' . $class = freeOrFull($list_free_place) . '">Nom Lien</label>
+    <input  type="text" name="add_name_link_head" id="add_name_link_head" class="' . $class = freeOrFull($list_free_place) . '"/><br/><br/>
+    <label for="$add_place_link_head" class="' . $class = freeOrFull($list_free_place) . '">Lien n°</label>
+    <select id="$add_place_link_head" name="$add_place_link_head" class="' . $class = freeOrFull($list_free_place) . '">';
 //Parcours de  l'array listant les places disponibles et l'affiche dans le menu déroulant
 foreach ($list_free_place as $value) {
     echo '<option>' . $value;
 }
-// Formulaire partie 3
+
+echo'</select><br/><br/>
+<label for="img_link_head" class="' . $class = freeOrFull($list_free_place) . '">Icône du fichier (JPG, PNG ou GIF | max. 15 Ko) :</label>
+<input type="file" name="img_link_head" class="' . $class = freeOrFull($list_free_place) . '"/><br/><br/>
+<input type="submit" value="Ajouter" class="' . $class = freeOrFull($list_free_place) . '"/><br /><br />
+</form>';
+
+
+//Formulaire partie 3 (Suppression)
 include("includes/form_link_head/form_part_3.html");
+
+foreach ($list_empty_place as $value) {
+    echo '<option>' . $value;
+}
+//Formulaire partie 4 (Fermeture du formulaire)
+include("includes/form_link_head/form_part_4.html");
+/*
+ * FIN ZONE LINK HEAD
+ */
 
 
 /*
  * ZONE LINK NAV
  */
 // Déclarations et fonctions pour la zone link nav
-$i = 1;
 $table = 'link_nav';
-$nbr_place = nbrPlace($table);
 $list_total_place = array(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14);
-$list_free_place = listFreePlace($list_total_place, $table);
+$list_free_place = listFreePlace($table, $list_total_place);
+$list_empty_place = listEmptyPlace($table);
 
 // Formulaire partie 1
 include("includes/form_link_nav/form_part_1.html");
 
-while ($i <= $nbr_place) {
-    echo '<option>' . $i;
-    $i++;
+foreach ($list_empty_place as $value) {
+    echo '<option>' . $value;
 }
-// Formulaire partie 2
-include("includes/form_link_nav/form_part_2.html");
+
+echo '</select><br/><br/>
+<input type="submit" value="Modifier"/><br /><br />
+</form>
+<h3>Ajout Lien</h3>';
+
+if (empty($list_free_place)) {
+    echo '<p">Limite de lien atteinte, veuillez d\'abord en supprimer un.</p>';
+}
+
+echo '<form method="post" action="register_link.php" enctype="multipart/form-data" >
+    <label for="add_link_nav" class="' . $class = freeOrFull($list_free_place) . '" >Lien</label>
+    <input type="url" name="add_link_nav" id="add_link_nav" class="' . $class = freeOrFull($list_free_place) . '"/>
+    <label for="add_name_link_nav" class="' . $class = freeOrFull($list_free_place) . '">Nom Lien</label>
+    <input type="text" name="add_name_link_nav" id="add_name_link_nav" class="' . $class = freeOrFull($list_free_place) . '"/>
+    <label for="$add_place_link_nav" class="' . $class = freeOrFull($list_free_place) . '">Lien n°</label>
+    <select id="$add_place_link_nav" name="$add_place_link_nav" class="' . $class = freeOrFull($list_free_place) . '">';
 
 foreach ($list_free_place as $i) {
     echo '<option>' . $i;
 }
-// Formulaire partie 3
+// Formulaire partie 2
+include("includes/form_link_nav/form_part_2.html");
+
+//Formulaire partie 3
 include("includes/form_link_nav/form_part_3.html");
 
+foreach ($list_empty_place as $value) {
+    echo '<option>' . $value;
+}
+//Formulaire partie 4
+include("includes/form_link_nav/form_part_4.html");
+/*
+ * FIN ZONE LINK NAV
+ */
 
-echo '
-<!-- ZONE LINK GAMES  -->
-<form method="post" action="register_link.php" enctype="multipart/form-data" >
-    <h2>Lien Games</h2>
-    <h3>Modification Lien</h3>
-    <label for="link_games">Lien</label>
-    <input type="url" name="link_games" id="link_games"/>
-    <label for="name_link_games">Nom Lien </label>
-    <input type="text" name="name_link_games" id="name_link_games"/>
-    <label for="games_place_number">Lien n°</label>
-    <select id="games_place_number" name="games_place_number">
-    <option>1
-    <option>2
-    <option>3
-    <option>4
-    <option>5
-    <option>6
-    </select>
-    <input type="submit" value="Modifier" name="Valider"/><br /><br />
-</form>
-<h3>Ajout Lien</h3>
-<form method="post" action="register_link.php" enctype="multipart/form-data" >
-    <label for="add_link_games">Lien</label>
-    <input type="url" name="add_link_games" id="add_link_games"/>
-    <label for="add_name_link_games">Nom Lien</label>
-    <input type="" name="add_name_link_games" id="add_name_link_games"/>
-    <input type="submit" name="Valider"/><br /><br />
-    <p id="trick">*6 Lien max</p>
-</form>
-<!-- ZONE LINK GAMES  -->
+/*
+ * ZONE LINK GAMES
+ */
+// Déclarations et fonctions pour la zone link games
+$table = 'link_games';
+$list_total_place = array(1, 2, 3, 4, 5, 6);
+$list_free_place = listFreePlace($table, $list_total_place);
+$list_empty_place = listEmptyPlace($table);
 
-<!-- ZONE LINK DEVTOOLS  -->
-<form method="post" action="register_link.php" enctype="multipart/form-data" >
-    <h2>Lien Devtools</h2>
-    <h3>Modification Lien</h3>
-    <label for="link_devtools">Lien </label>
-    <input type="url" name="link_devtools" id="link_devtools"/>
-    <label for="name_link_devtools">Nom Lien </label>
-    <input type="text" name="name_link_devtools" id="name_link_devtools"/>
-    <label for="devtools_place_number">Lien n°</label>
-    <select id="devtools_place_number" name="devtools_place_number">
-    <option>1
-    <option>2
-    <option>3
-    <option>4
-    <option>5
-    <option>6
-    </select>
-    <input type="submit" value="Ajouter"/><br /><br />
-</form>
-<!-- ZONE LINK DEVTOOLS  -->
+// Formulaire partie 1
+include("includes/form_link_games/form_part_1.html");
 
-<!-- ZONE LINK ADMINISTRATIF  -->
-<form method="post" action="register_link.php" enctype="multipart/form-data" >
-    <h2>Lien Administratif</h2>
-    <h3>Modification Lien</h3>
-    <label for="link_administratif">Lien </label>
-    <input type="url" name="link_administratif" id="link_administratif"/>
-    <label for="name_link_administratif">Nom Lien </label>
-    <input type="text" name="name_link_administratif" id="name_link_administratif"/>
-    <label for="administratif_place_number">Lien n°</label>
-    <select id="administratif_place_number" name="administratif_place_number">
-    <option>1
-    <option>2
-    <option>3
-    <option>4
-    <option>5
-    <option>6
-    </select>
-    <input type="submit" value="Modifier"/><br /><br />
-</form>
-<!-- ZONE LINK ADMINISTRATIF  -->
+foreach ($list_empty_place as $value) {
+    echo '<option>' . $value;
+}
 
-<!-- ZONE LINK DIVERS  -->
-<form method="post" action="register_link.php" enctype="multipart/form-data" >
-    <h2>Lien Divers</h2>
-    <h3>Modification Lien</h3>
-    <label for="link_divers">Lien </label>
-    <input type="url" name="link_divers" id="link_divers"/>
-    <label for="name_link_divers">Nom Lien </label>
-    <input type="text" name="name_link_divers" id="name_link_divers"/>
-    <label for="divers_place_number">Lien n°</label>
-    <select id="divers_place_number" name="divers_place_number">
-    <option>1
-    <option>2
-    <option>3
-    <option>4
-    <option>5
-    <option>6
-    </select>
-    <input type="submit" value="Modifier"/><br /><br />
+echo '</select><br/><br/>
+<input type="submit" value="Modifier"/><br /><br />
 </form>
-<!-- ZONE LINK DIVERS  -->
-</body>
-</html>
-';
+<h3>Ajout Lien</h3>';
+
+if (empty($list_free_place)) {
+    echo '<p">Limite de lien atteinte, veuillez d\'abord en supprimer un.</p>';
+}
+
+echo '<form method="post" action="register_link.php" enctype="multipart/form-data" >
+    <label for="add_link_games" class="' . $class = freeOrFull($list_free_place) . '" >Lien</label>
+    <input type="url" name="add_link_games" id="add_link_games" class="' . $class = freeOrFull($list_free_place) . '"/>
+    <label for="add_name_link_games" class="' . $class = freeOrFull($list_free_place) . '">Nom Lien</label>
+    <input type="text" name="add_name_link_games" id="add_name_link_games" class="' . $class = freeOrFull($list_free_place) . '"/>
+    <label for="$add_place_link_games" class="' . $class = freeOrFull($list_free_place) . '">Lien n°</label>
+    <select id="$add_place_link_games" name="$add_place_link_games" class="' . $class = freeOrFull($list_free_place) . '">';
+
+foreach ($list_free_place as $i) {
+    echo '<option>' . $i;
+}
+// Formulaire partie 2
+include("includes/form_link_games/form_part_2.html");
+
+//Formulaire partie 3
+include("includes/form_link_games/form_part_3.html");
+
+foreach ($list_empty_place as $value) {
+    echo '<option>' . $value;
+}
+//Formulaire partie 4
+include("includes/form_link_games/form_part_4.html");
+/*
+ * FIN ZONE LINK GAMES
+ */
+
+/*
+ * ZONE LINK DEVTOOLS
+ */
+// Déclarations et fonctions pour la zone link devtools
+$table = 'link_devtools';
+$list_total_place = array(1, 2, 3, 4, 5, 6);
+$list_free_place = listFreePlace($table, $list_total_place);
+$list_empty_place = listEmptyPlace($table);
+
+// Formulaire partie 1
+include("includes/form_link_devtools/form_part_1.html");
+
+foreach ($list_empty_place as $value) {
+    echo '<option>' . $value;
+}
+
+echo '</select><br/><br/>
+<input type="submit" value="Modifier"/><br /><br />
+</form>
+<h3>Ajout Lien</h3>';
+
+if (empty($list_free_place)) {
+    echo '<p">Limite de lien atteinte, veuillez d\'abord en supprimer un.</p>';
+}
+
+echo '<form method="post" action="register_link.php" enctype="multipart/form-data" >
+    <label for="add_link_devtools" class="' . $class = freeOrFull($list_free_place) . '" >Lien</label>
+    <input type="url" name="add_link_devtools" id="add_link_devtools" class="' . $class = freeOrFull($list_free_place) . '"/>
+    <label for="add_name_link_devtools" class="' . $class = freeOrFull($list_free_place) . '">Nom Lien</label>
+    <input type="text" name="add_name_link_devtools" id="add_name_link_devtools" class="' . $class = freeOrFull($list_free_place) . '"/>
+    <label for="$add_place_link_devtools" class="' . $class = freeOrFull($list_free_place) . '">Lien n°</label>
+    <select id="$add_place_link_devtools" name="$add_place_link_devtools" class="' . $class = freeOrFull($list_free_place) . '">';
+
+foreach ($list_free_place as $i) {
+    echo '<option>' . $i;
+}
+// Formulaire partie 2
+include("includes/form_link_devtools/form_part_2.html");
+
+//Formulaire partie 3
+include("includes/form_link_devtools/form_part_3.html");
+
+foreach ($list_empty_place as $value) {
+    echo '<option>' . $value;
+}
+//Formulaire partie 4
+include("includes/form_link_devtools/form_part_4.html");
+/*
+ * FIN ZONE LINK DEVTOOLS
+ */
+
+/*
+ * ZONE LINK ADMINISTRATIF
+ */
+// Déclarations et fonctions pour la zone link administratif
+$table = 'link_administratif';
+$list_total_place = array(1, 2, 3, 4, 5, 6);
+$list_free_place = listFreePlace($table, $list_total_place);
+$list_empty_place = listEmptyPlace($table);
+
+// Formulaire partie 1
+include("includes/form_link_administratif/form_part_1.html");
+
+foreach ($list_empty_place as $value) {
+    echo '<option>' . $value;
+}
+
+echo '</select><br/><br/>
+<input type="submit" value="Modifier"/><br /><br />
+</form>
+<h3>Ajout Lien</h3>';
+
+if (empty($list_free_place)) {
+    echo '<p">Limite de lien atteinte, veuillez d\'abord en supprimer un.</p>';
+}
+
+echo '<form method="post" action="register_link.php" enctype="multipart/form-data" >
+    <label for="add_link_administratif" class="' . $class = freeOrFull($list_free_place) . '" >Lien</label>
+    <input type="url" name="add_link_administratif" id="add_link_administratif" class="' . $class = freeOrFull($list_free_place) . '"/>
+    <label for="add_name_link_administratif" class="' . $class = freeOrFull($list_free_place) . '">Nom Lien</label>
+    <input type="text" name="add_name_link_administratif" id="add_name_link_administratif" class="' . $class = freeOrFull($list_free_place) . '"/>
+    <label for="$add_place_link_administratif" class="' . $class = freeOrFull($list_free_place) . '">Lien n°</label>
+    <select id="$add_place_link_administratif" name="$add_place_link_administratif" class="' . $class = freeOrFull($list_free_place) . '">';
+
+foreach ($list_free_place as $i) {
+    echo '<option>' . $i;
+}
+// Formulaire partie 2
+include("includes/form_link_administratif/form_part_2.html");
+
+//Formulaire partie 3
+include("includes/form_link_administratif/form_part_3.html");
+
+foreach ($list_empty_place as $value) {
+    echo '<option>' . $value;
+}
+//Formulaire partie 4
+include("includes/form_link_administratif/form_part_4.html");
+/*
+ * FIN ZONE LINK ADMINISTRATIF
+ */
+
+/*
+ * ZONE LINK DIVERS
+ */
+// Déclarations et fonctions pour la zone link divers
+$table = 'link_divers';
+$list_total_place = array(1, 2, 3, 4, 5, 6);
+$list_free_place = listFreePlace($table, $list_total_place);
+$list_empty_place = listEmptyPlace($table);
+
+// Formulaire partie 1
+include("includes/form_link_divers/form_part_1.html");
+
+foreach ($list_empty_place as $value) {
+    echo '<option>' . $value;
+}
+
+echo '</select><br/><br/>
+<input type="submit" value="Modifier"/><br /><br />
+</form>
+<h3>Ajout Lien</h3>';
+
+if (empty($list_free_place)) {
+    echo '<p">Limite de lien atteinte, veuillez d\'abord en supprimer un.</p>';
+}
+
+echo '<form method="post" action="register_link.php" enctype="multipart/form-data" >
+    <label for="add_link_divers" class="' . $class = freeOrFull($list_free_place) . '" >Lien</label>
+    <input type="url" name="add_link_divers" id="add_link_divers" class="' . $class = freeOrFull($list_free_place) . '"/>
+    <label for="add_name_link_divers" class="' . $class = freeOrFull($list_free_place) . '">Nom Lien</label>
+    <input type="text" name="add_name_link_divers" id="add_name_link_divers" class="' . $class = freeOrFull($list_free_place) . '"/>
+    <label for="$add_place_link_divers" class="' . $class = freeOrFull($list_free_place) . '">Lien n°</label>
+    <select id="$add_place_link_divers" name="$add_place_link_divers" class="' . $class = freeOrFull($list_free_place) . '">';
+
+foreach ($list_free_place as $i) {
+    echo '<option>' . $i;
+}
+// Formulaire partie 2
+include("includes/form_link_divers/form_part_2.html");
+
+//Formulaire partie 3
+include("includes/form_link_divers/form_part_3.html");
+
+foreach ($list_empty_place as $value) {
+    echo '<option>' . $value;
+}
+//Formulaire partie 4
+include("includes/form_link_divers/form_part_4.html");
+/*
+ * FIN ZONE LINK DIVERS
+ */
+

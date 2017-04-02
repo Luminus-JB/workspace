@@ -1,0 +1,304 @@
+* {
+    background-size: cover;
+}
+
+/*div main_container */
+#main_container {
+    display: flex;
+    justify-content: center;
+    margin-top: 5%;
+}
+
+/*div main_container*/
+
+/* div nav */
+#nav {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    width: 100px;
+}
+
+#lumi {
+    display: block;
+    height: 100px;
+    width: 100px;
+    border-radius: 5px;
+    background-image: url("../img/lumi.png");
+    margin-bottom: 1px;
+}
+
+/* second_link_container */
+#second_link_container {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.second_link {
+    display: block;
+    height: 48px;
+    width: 48px;
+    border-radius: 5px;
+    margin: 1px;
+}
+
+/* Fonds des liens du second_link_container */
+#link_nav_1 {
+    background-image: url("../img/site_perso.png");
+}
+
+#link_nav_2 {
+    background-image: url("../img/database.png");
+}
+
+#link_nav_3 {
+    background-image: url("../img/tchat.png");
+}
+
+#link_nav_4 {
+    background-image: url("../img/localhost_blue.png");
+}
+
+#link_nav_5 {
+    background-image: url("../img/contact.png");
+}
+
+#link_nav_6 {
+    background-image: url("../img/agenda.png");
+}
+
+#link_nav_7 {
+    background-image: url("../img/photos.png");
+}
+
+#link_nav_8 {
+    background-image: url("../img/configuration.png");
+}
+
+/* second_link_container */
+/* div nav */
+
+/* div body */
+/* div main_link_container */
+#main_link_container {
+    display: flex;
+}
+
+.main_link {
+    display: block;
+    height: 100px;
+    width: 100px;
+    margin-left: 1px;
+    border-radius: 5px;
+}
+
+/* Fonds des block de liens dans la div main_link_container */
+#gmail {
+   /* background-image: url("../img/gmail_Jago_Desain.png");*/
+}
+
+#google_translate {
+    background-image: url("../img/google_translate_Jago_Desain_.png");
+}
+
+#google_drive {
+    background-image: url("../img/google_drive_Jago_Desain_.png");
+}
+
+#youtube {
+    background-image: url("../img/youtube.png");
+}
+
+#netflix {
+    background-image: url("../img/netflix.png");
+}
+
+#github {
+    background-image: url("../img/github_Shota MIckaia_.png");
+}
+
+#evernote {
+    background-image: url("../img/evernote.png");
+}
+
+#dropbox {
+    background-image: url("../img/dropbox.png");
+}
+
+/*-----------------------------------------------------------------*/
+/* div main_link_container */
+
+/* div general_link_container */
+#general_link_container {
+    display: flex;
+}
+
+.link_list_container {
+    margin: 1px;
+    padding-top: 5px;
+    border-radius: 5px;
+}
+
+.link_list {
+    display: block;
+    height: 345px;
+    width: 198px;
+    margin: 1px;
+}
+
+/* fond des conteneur des link_list + enlève le background lors du hover */
+#gaming_container {
+    background-image: url("../img/dés.jpg");
+}
+
+#gaming_container:hover {
+    background-image: none;
+}
+
+#devtools_container {
+    background-image: url("../img/devtools.jpeg");
+}
+
+#devtools_container:hover {
+    background-image: none;
+}
+
+#administratif_container {
+    background-image: url("../img/administratif.jpg");
+}
+
+#administratif_container:hover {
+    background-image: none;
+}
+
+#divers_container {
+    background-image: url("../img/divers.jpeg");
+}
+
+#divers_container:hover {
+    background-image: none;
+}
+
+/* fond des conteneur des link_list + enlève le background lors du hover */
+
+/* Affiche le contenu des link_list lors du hover */
+.link_list_container:hover #gaming {
+    visibility: visible;
+}
+
+.link_list_container:hover #devtools {
+    visibility: visible;
+}
+
+.link_list_container:hover #administratif {
+    visibility: visible;
+}
+
+.link_list_container:hover #divers {
+    visibility: visible;
+}
+
+/* Affiche le contenu des link_list lors du hover */
+
+/* Cache le contenu des link_list pas default */
+#gaming, #devtools, #administratif, #divers {
+    visibility: hidden;
+}
+
+/* Cache le contenu des link_list pas default */
+
+/* Apparence  des liens  */
+#general_link_container a {
+    font-family: "fibon_sansthin", "lane_-_narrowregular", "Arial";
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+}
+
+#general_link_container a:hover {
+    color: darkgrey;
+}
+
+#gaming a:link, #gaming a:visited, #gaming a:active,
+#devtools a:link, #devtools a:visited, #devtools a:active,
+#administratif a:link, #administratif a:visited, #administratif a:active,
+#divers a:link, #divers a:visited, #divers a:active {
+    color: black;
+    text-decoration: none;
+}
+
+#gaming a:hover, #devtools a:hover, #administratif a:hover, #divers a:hover {
+    color: darkgrey;
+}
+
+/* Apparence  des liens  */
+
+/* div general_link_container */
+/* div body*/
+
+/* Footer */
+#signature {
+    font-family: "infinite_strokeregular", "fibon_sansthin", "lane_-_narrowregular", "Arial";
+    font-size: 20px;
+}
+
+#compteur {
+    font-family: "infinite_strokeregular", "fibon_sansthin", "lane_-_narrowregular", "Arial";
+}
+
+/* Footer */
+
+/* Police */
+@font-face {
+    font-family: 'lane_-_narrowregular';
+    src: url('../font/lanenar_-webfont.woff2') format('woff2'),
+    url('../font/lanenar_-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'fibon_sansthin';
+    src: url('../font/fibon_sans_regular-webfont.woff2') format('woff2'),
+    url('../font/fibon_sans_regular-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'infinite_strokeregular';
+    src: url('../font/infinite_stroke-webfont.woff2') format('woff2'),
+    url('../font/infinite_stroke-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* Police */
+
+/* Taille d'écran*/
+@media only screen and (max-width: 960px) {
+    #nav {
+        width: 80px;
+    }
+
+    #lumi {
+        width: 80px;
+        height: 80px;
+    }
+
+    .second_link {
+        width: 38px;
+        height: 38px;
+    }
+
+    .main_link {
+        width: 80px;
+        height: 80px;
+    }
+
+    .link_list {
+        width: 158px;
+        height: 320px;
+    }
+}
+
