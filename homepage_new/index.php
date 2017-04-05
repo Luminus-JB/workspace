@@ -1,7 +1,7 @@
 <?php
 /**
  * Created by PhpStorm.
- * User: pugju
+ * User: Lumi
  * Date: 29/03/2017
  * Time: 17:26
  */
@@ -91,28 +91,28 @@ $list_name_link = listNameLink($table);
 echo '<!-- Link - Header --><div id="main_link_container">';
 
 if (isset($list_link[0])) {
-    echo '<a href="' . $list_link[0] . '" id="gmail" class="main_link" background ="img/agenda.png" title="' . $list_name_link[0] . '" ></a>';
+    echo '<a href="' . $list_link[0] . '" id="link_head_1" class="main_link" background ="img/agenda.png" title="' . $list_name_link[0] . '" ></a>';
 }
 if (isset($list_link[1])) {
-    echo '<a href="' . $list_link[1] . '" id="google_translate" class="main_link" title="' . $list_name_link[1] . '"></a>';
+    echo '<a href="' . $list_link[1] . '" id="link_head_2" class="main_link" title="' . $list_name_link[1] . '"></a>';
 }
 if (isset($list_link[2])) {
-    echo '<a href="' . $list_link[2] . '" id="google_drive" class="main_link" title="google ' . $list_name_link[2] . '"></a>';
+    echo '<a href="' . $list_link[2] . '" id="link_head_3" class="main_link" title="' . $list_name_link[2] . '"></a>';
 }
 if (isset($list_link[3])) {
-    echo '<a href="' . $list_link[3] . '" id="youtube" class="main_link" title="' . $list_name_link[3] . '"></a>';
+    echo '<a href="' . $list_link[3] . '" id="link_head_4" class="main_link" title="' . $list_name_link[3] . '"></a>';
 }
 if (isset($list_link[4])) {
-    echo '<a href="' . $list_link[4] . '" id="netflix" class="main_link" title="' . $list_name_link[4] . '"></a>';
+    echo '<a href="' . $list_link[4] . '" id="link_head_5" class="main_link" title="' . $list_name_link[4] . '"></a>';
 }
 if (isset($list_link[5])) {
-    echo '<a href="' . $list_link[5] . '" id="github" class="main_link" title="' . $list_name_link[5] . '"></a>';
+    echo '<a href="' . $list_link[5] . '" id="link_head_6" class="main_link" title="' . $list_name_link[5] . '"></a>';
 }
 if (isset($list_link[6])) {
-    echo '<a href="' . $list_link[6] . '" id="evernote" class="main_link" title="' . $list_name_link[6] . '"></a>';
+    echo '<a href="' . $list_link[6] . '" id="link_head_7" class="main_link" title="' . $list_name_link[6] . '"></a>';
 }
 if (isset($list_link[7])) {
-    echo '<a href="' . $list_link[7] . '" id="dropbox" class="main_link" title="' . $list_name_link[7] . '"></a>';
+    echo '<a href="' . $list_link[7] . '" id="link_head_8" class="main_link" title="' . $list_name_link[7] . '"></a>';
 }
 
 echo '</div><!-- Link - Header -->';
@@ -269,13 +269,13 @@ echo '<footer>
       <div id="compteur" align="center">';
 
 $monfichier = fopen('compteur.txt', 'r+');
-$pages_vues = fgets($monfichier); // On lit la première ligne (nombre de pages vues)
+$pages_vues = fgets($monfichier); // On lit la premi?re ligne (nombre de pages vues)
 $pages_vues += 1; // On augmente de 1 ce nombre de pages vues
-fseek($monfichier, 0); // On remet le curseur au début du fichier
-fputs($monfichier, $pages_vues); // On écrit le nouveau nombre de pages vues
+fseek($monfichier, 0); // On remet le curseur au d?but du fichier
+fputs($monfichier, $pages_vues); // On ?crit le nouveau nombre de pages vues
 fclose($monfichier);
 
-echo '<p id="compteur">Cette page a été vue ' . $pages_vues . ' fois !</p>
+echo '<p id="compteur">Cette page a ?t? vue ' . $pages_vues . ' fois !</p>
       </div>
       <!-- Compteur -->
       </footer>

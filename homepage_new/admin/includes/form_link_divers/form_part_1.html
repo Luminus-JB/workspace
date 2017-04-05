@@ -1,10 +1,16 @@
 <!-- ZONE LINK DIVERS  -->
-<form method="post" action="register_link.php" enctype="multipart/form-data" >
-    <h2>Lien Divers</h2>
-    <h3>Modification Lien</h3>
-    <label for="link_divers">Lien</label>
-    <input type="url" name="link_divers" id="link_divers"/>
-    <label for="name_link_divers">Nom Lien</label>
-    <input type="text" name="name_link_divers" id="name_link_divers"/>
-    <label for="divers_place_number">Lien n°</label>
-    <select id="divers_place_number" name="divers_place_number">
+<div id="divers">
+    <form method="post" action="register_link.php" enctype="multipart/form-data" >
+        <h2>Lien Divers</h2>
+        <h3>Image de couverture</h3>
+        <label for="img_games">Icône du fichier (JPG, PNG ou GIF | max. 15 Ko) :</label>
+        <input type="file" name="img_games" id="img_games"/> *<br/>
+    </form>
+    <form method="post" action="register_link.php" enctype="multipart/form-data" >
+        <h3>Modification Lien</h3>
+        <label for="link_divers">Lien</label>
+        <input type="url" name="link_divers" id="link_divers"/>
+        <label for="name_link_divers">Nom Lien</label>
+        <input type="text" name="name_link_divers" id="name_link_divers"/>
+        <label for="divers_place_number">Lien n°</label>
+        <select id="divers_place_number" name="divers_place_number">

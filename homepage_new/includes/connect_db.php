@@ -1,7 +1,7 @@
 <?php
 /**
  * Created by PhpStorm.
- * User: Julien
+ * User: Lumi
  * Date: 18/02/2017
  * Time: 15:51
  */
@@ -16,4 +16,7 @@ catch (Exception $e)
 {
     die('Erreur : ' . $e->getMessage());
 }
+// Indique lors de la connexion au SGBD le jeu de caractères que nous souhaitons utiliser
+$req = $db->query('SET NAMES utf8');
+$req->closeCursor();
 ?>

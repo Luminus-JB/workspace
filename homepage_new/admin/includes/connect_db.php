@@ -16,4 +16,7 @@ catch (Exception $e)
 {
     die('Erreur : ' . $e->getMessage());
 }
+// Indique lors de la connexion au SGBD le jeu de caractères que nous souhaitons utiliser
+$req = $db->query('SET NAMES utf8');
+$req->closeCursor();
 ?>

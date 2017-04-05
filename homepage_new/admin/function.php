@@ -54,30 +54,89 @@ function freeOrFull($list_free_place)
     }
 }
 
-function updateLink($table, $name_link, $link, $place_number)
+function updateLinkNameImage($table, $link, $name_link, $img_link, $place_number)
 {
     include("includes/connect_db.php");
-    $req = $db->prepare('UPDATE ' . $table . ' SET name_link = :name_link, link = :link WHERE place = :place');
+    $req = $db->prepare('UPDATE ' . $table . ' SET name_link = :name_link, link = :link, img_link = :img_link WHERE place = :place');
+    $req->execute(array(
+        'link' => $link,
+        'name_link' => $name_link,
+        'img_link' => $img_link,
+        'place' => $place_number
+    ));
+    $req->closeCursor();
+}
+
+function updateLinkName($table, $link, $name_link, $place_number)
+{
+    include("includes/connect_db.php");
+    $req = $db->prepare('UPDATE ' . $table . ' SET link = :link, name_link = :name_link WHERE place = :place');
+    $req->execute(array(
+        'link' => $link,
+        'name_link' => $name_link,
+        'place' => $place_number
+    ));
+    $req->closeCursor();
+}
+
+function updateLinkImage($table, $link, $img_link, $place_number)
+{
+    include("includes/connect_db.php");
+    $req = $db->prepare('UPDATE ' . $table . ' SET link = :link, img_link = :img_link WHERE place = :place');
+    $req->execute(array(
+        'link' => $link,
+        'img_link' => $img_link,
+        'place' => $place_number
+    ));
+    $req->closeCursor();
+}
+
+function updateNameImage($table, $name_link, $img_link, $place_number)
+{
+    include("includes/connect_db.php");
+    $req = $db->prepare('UPDATE ' . $table . ' SET name_link = :name_link, img_link = :img_link WHERE place = :place');
     $req->execute(array(
         'name_link' => $name_link,
+        'img_link' => $img_link,
+        'place' => $place_number
+    ));
+    $req->closeCursor();
+}
+
+function updateLinkOnly($table, $link, $place_number)
+{
+    include("includes/connect_db.php");
+    $req = $db->prepare('UPDATE ' . $table . ' SET link = :link WHERE place = :place');
+    $req->execute(array(
         'link' => $link,
         'place' => $place_number
     ));
     $req->closeCursor();
 }
 
-function updateLinkImage($table, $name_link, $link, $place_number, $img_link)
+function updateNameOnly($table, $name_link, $place_number)
 {
     include("includes/connect_db.php");
-    $req = $db->prepare('UPDATE ' . $table . ' SET name_link = :name_link, link = :link, img_link = :img_link WHERE place = :place');
+    $req = $db->prepare('UPDATE ' . $table . ' SET name_link = :name_link WHERE place = :place');
     $req->execute(array(
         'name_link' => $name_link,
-        'link' => $link,
-        'place' => $place_number,
-        'img_link' => $img_link
+        'place' => $place_number
     ));
     $req->closeCursor();
 }
+
+function updateImageOnly($table, $img_link, $place_number)
+{
+    include("includes/connect_db.php");
+    $req = $db->prepare('UPDATE ' . $table . ' SET img_link = :img_link WHERE place = :place');
+    $req->execute(array(
+        'img_link' => $img_link,
+        'place' => $place_number
+    ));
+    $req->closeCursor();
+}
+
+
 
 function insertLink($table, $add_name_link, $add_link, $add_place_number)
 {
@@ -91,7 +150,7 @@ function insertLink($table, $add_name_link, $add_link, $add_place_number)
     $req->closeCursor();
 }
 
-function insertLinkImage($table, $add_name_link, $add_link, $add_place_number, $img_link)
+function insertLinkImage($table, $add_name_link, $add_link, $img_link, $add_place_number)
 {
     include("includes/connect_db.php");
     $req = $db->prepare('INSERT INTO ' . $table . ' (place, name_link, link, img_link) VALUES (:place, :name_link, :link, :img_link)');

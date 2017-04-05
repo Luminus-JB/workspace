@@ -1,11 +1,13 @@
 <?php
 /**
  * Created by PhpStorm.
- * User: pugju
+ * User: Lumi
  * Date: 02/04/2017
  * Time: 11:53
  */
 header('content-type: text/css');
+//Contient les fonctions
+include("../function.php");
 $result = "../img/gmail_Jago_Desain.png";
 ?>
 
@@ -53,39 +55,61 @@ border-radius: 5px;
 margin: 1px;
 }
 
-/* Fonds des liens du second_link_container */
-#link_nav_1 {
-background-image: url("../img/site_perso.png");
-}
+/* Fonds des liens du second_link_container - Nav*/
+<?php
+//Déclarations de la table pour la fonction récupérant la liste des liens images
+$table = "link_nav";
+$list_img_link = listImageLink($table);
+?>
 
-#link_nav_2 {
-background-image: url("../img/database.png");
-}
-
-#link_nav_3 {
-background-image: url("../img/tchat.png");
-}
-
-#link_nav_4 {
-background-image: url("../img/localhost_blue.png");
-}
-
-#link_nav_5 {
-background-image: url("../img/contact.png");
-}
-
-#link_nav_6 {
-background-image: url("../img/agenda.png");
-}
-
-#link_nav_7 {
-background-image: url("../img/photos.png");
-}
-
-#link_nav_8 {
-background-image: url("../img/configuration.png");
-}
-
+<?php if (isset($list_img_link[0])){?>
+    #link_nav_1 {background-image: url("<?php echo $list_img_link[0] ?>");}
+<?php } ?>
+<?php if (isset($list_img_link[1])){?>
+    #link_nav_2 {background-image: url("<?php echo $list_img_link[1] ?>");}
+<?php } ?>
+<?php if (isset($list_img_link[2])){?>
+    #link_nav_3 {background-image: url("<?php echo $list_img_link[2] ?>");}
+<?php } ?>
+<?php if (isset($list_img_link[3])){?>
+    #link_nav_4 {background-image: url("<?php echo $list_img_link[3] ?>");}
+<?php } ?>
+<?php if (isset($list_img_link[4])){?>
+    #link_nav_5 {background-image: url("<?php echo $list_img_link[4] ?>");}
+<?php } ?>
+<?php if (isset($list_img_link[5])){?>
+    #link_nav_6 {background-image: url("<?php echo $list_img_link[5] ?>");}
+<?php } ?>
+<?php if (isset($list_img_link[6])){?>
+#link_nav_7 {background-image: url("<?php echo $list_img_link[6] ?>");}
+<?php } ?>
+<?php if (isset($list_img_link[7])){?>
+#link_nav_8 {background-image: url("<?php echo $list_img_link[7] ?>");}
+<?php } ?>
+<?php if (isset($list_img_link[8])){?>
+    #link_nav_9 {background-image: url("<?php echo $list_img_link[8] ?>");}
+<?php } ?>
+<?php if (isset($list_img_link[9])){?>
+    #link_nav_10 {background-image: url("<?php echo $list_img_link[9] ?>");}
+<?php } ?>
+<?php if (isset($list_img_link[10])){?>
+    #link_nav_11 {background-image: url("<?php echo $list_img_link[10] ?>");}
+<?php } ?>
+<?php if (isset($list_img_link[11])){?>
+    #link_nav_12 {background-image: url("<?php echo $list_img_link[11] ?>");}
+<?php } ?>
+<?php if (isset($list_img_link[12])){?>
+    #link_nav_13 {background-image: url("<?php echo $list_img_link[12] ?>");}
+<?php } ?>
+<?php if (isset($list_img_link[13])){?>
+    #link_nav_14 {background-image: url("<?php echo $list_img_link[13] ?>");}
+<?php } ?>
+<?php if (isset($list_img_link[14])){?>
+    #link_nav_15 {background-image: url("<?php echo $list_img_link[14] ?>");}
+<?php } ?>
+<?php if (isset($list_img_link[15])){?>
+    #link_nav_16 {background-image: url("<?php echo $list_img_link[15] ?>");}
+<?php } ?>
 /* second_link_container */
 /* div nav */
 
@@ -103,41 +127,35 @@ margin-left: 1px;
 border-radius: 5px;
 }
 
-/* Fonds des block de liens dans la div main_link_container */
-#gmail {
-
- background-image:  url("<?php echo $result ?>");
-
-}
-
-#google_translate {
-background-image: url("../img/google_translate_Jago_Desain_.png");
-}
-
-#google_drive {
-background-image: url("../img/google_drive_Jago_Desain_.png");
-}
-
-#youtube {
-background-image: url("../img/youtube.png");
-}
-
-#netflix {
-background-image: url("../img/netflix.png");
-}
-
-#github {
-background-image: url("../img/github_Shota MIckaia_.png");
-}
-
-#evernote {
-background-image: url("../img/evernote.png");
-}
-
-#dropbox {
-background-image: url("../img/dropbox.png");
-}
-
+/* Fonds des block de liens dans la div main_link_container - Header */
+<?php
+$table = "link_head";
+$list_img_link = listImageLink($table);
+?>
+<?php if (isset($list_img_link[0])){?>
+#link_head_1 {background-image:  url("<?php echo $list_img_link[0] ?>");}
+<?php }
+if (isset($list_img_link[1])){?>
+#link_head_2 {background-image: url("<?php echo $list_img_link[1] ?>");}
+<?php }
+if (isset($list_img_link[2])){?>
+#link_head_3 {background-image: url("<?php echo $list_img_link[2] ?>");}
+<?php }
+if (isset($list_img_link[3])){?>
+#link_head_4 {background-image: url("<?php echo $list_img_link[3] ?>");}
+<?php }
+if (isset($list_img_link[4])){?>
+#link_head_5 {background-image: url("<?php echo $list_img_link[4] ?>");}
+<?php }
+if (isset($list_img_link[5])){?>
+#link_head_6 {background-image: url("<?php echo $list_img_link[5] ?>");}
+<?php }
+if (isset($list_img_link[6])){?>
+#link_head_7 {background-image: url("<?php echo $list_img_link[6] ?>");}
+<?php }
+if (isset($list_img_link[7])){?>
+#link_head_8 {background-image: url("<?php echo $list_img_link[7] ?>");}
+<?php } ?>
 /*-----------------------------------------------------------------*/
 /* div main_link_container */
 

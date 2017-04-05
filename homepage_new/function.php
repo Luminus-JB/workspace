@@ -31,3 +31,17 @@ function listNameLink($table)
     $req->closeCursor();
     return $list_name_link;
 }
+
+function listImageLink($table)
+{
+    //Contient la connexion à la db
+    include("includes/connect_db.php");
+    //On récupère les numéros des emplacements déjà occupés
+    $req = $db->query('SELECT img_link FROM ' . $table . ' ORDER BY place ASC ');
+    while($donnees = $req->fetch()){
+        $list_img_link[] = $donnees['img_link'];
+    }
+    $req->closeCursor();
+    return $list_img_link;
+}
+
