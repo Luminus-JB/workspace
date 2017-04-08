@@ -321,8 +321,13 @@ font-style: normal;
 
 /* Taille d'écran*/
 @media only screen and (max-width: 960px) {
+#body {
+margin-top: 20%;
+}
+
 #nav {
 width: 80px;
+margin-top: 20%;
 }
 
 #lumi {
@@ -344,6 +349,3 @@ height: 80px;
 width: 158px;
 height: 320px;
 }
-}
-
-
