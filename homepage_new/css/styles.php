@@ -6,9 +6,10 @@
  * Time: 11:53
  */
 header('content-type: text/css');
+//Contient la connexion à la db
+include("../includes/connect_db.php");
 //Contient les fonctions
 include("../function.php");
-$result = "../img/gmail_Jago_Desain.png";
 ?>
 
 * {
@@ -176,34 +177,46 @@ height: 345px;
 width: 198px;
 margin: 1px;
 }
-
+<?php
+$table= 'wallpaper_games';
+$wallpaper_games = ImgWallpaper($table);
+?>
 /* fond des conteneur des link_list + enlève le background lors du hover */
 #gaming_container {
-background-image: url("../img/dés.jpg");
+background-image: url("<?php echo $wallpaper_games ?>");
 }
 
 #gaming_container:hover {
 background-image: none;
 }
-
+<?php
+$table= 'wallpaper_devtools';
+$wallpaper_devtools = ImgWallpaper($table);
+?>
 #devtools_container {
-background-image: url("../img/devtools.jpeg");
+background-image: url("<?php echo $wallpaper_devtools ?>");
 }
 
 #devtools_container:hover {
 background-image: none;
 }
-
+<?php
+$table= 'wallpaper_administratif';
+$wallpaper_administratif = ImgWallpaper($table);
+?>
 #administratif_container {
-background-image: url("../img/administratif.jpg");
+background-image: url("<?php echo $wallpaper_administratif ?>");
 }
 
 #administratif_container:hover {
 background-image: none;
 }
-
+<?php
+$table= 'wallpaper_divers';
+$wallpaper_divers = ImgWallpaper($table);
+?>
 #divers_container {
-background-image: url("../img/divers.jpeg");
+background-image: url("<?php echo $wallpaper_divers ?>");
 }
 
 #divers_container:hover {

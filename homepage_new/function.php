@@ -45,3 +45,15 @@ function listImageLink($table)
     return $list_img_link;
 }
 
+function ImgWallpaper($table)
+{
+    //Contient la connexion à la db
+    include("includes/connect_db.php");
+    //On récupère les numéros des emplacements déjà occupés
+    $req = $db->query('SELECT wallpaper FROM ' . $table);
+    while($donnees = $req->fetch()){
+        return $img_link = $donnees['wallpaper'];
+    }
+    $req->closeCursor();
+}
+

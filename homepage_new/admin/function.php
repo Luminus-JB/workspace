@@ -1,7 +1,7 @@
 <?php
 /**
  * Created by PhpStorm.
- * User: pugju
+ * User: Lumi
  * Date: 28/03/2017
  * Time: 14:45
  */
@@ -32,6 +32,19 @@ function listEmptyPlace($table)
         $list_empty_place[] = $donnees['place'];
     }
     return $list_empty_place;
+}
+
+function listNameEmptyPlace($table)
+{
+    //Contient la connexion à la db
+    include("includes/connect_db.php");
+    //On récupère les numéros des emplacements déjà occupés
+    $req = $db->query('SELECT name_link FROM ' . $table . ' ORDER BY place ASC ');
+    //On récupère ce que renvoie la requête SQL et le met dans un tableau
+    while ($donnees = $req->fetch()) {
+        $list_name_empty_place[] = $donnees['name_link'];
+    }
+    return $list_name_empty_place;
 }
 
 function nbrPlace($table)
@@ -136,8 +149,6 @@ function updateImageOnly($table, $img_link, $place_number)
     $req->closeCursor();
 }
 
-
-
 function insertLink($table, $add_name_link, $add_link, $add_place_number)
 {
     include("includes/connect_db.php");
@@ -169,6 +180,16 @@ function deleteLink($table, $delete)
     $req = $db->prepare('DELETE FROM ' . $table . ' WHERE place = :place');
     $req->execute(array(
         'place' => $delete
+    ));
+    $req->closeCursor();
+}
+
+function updateImageCat($table, $img_link)
+{
+    include("includes/connect_db.php");
+    $req = $db->prepare('UPDATE ' . $table . ' SET wallpaper = :img_link');
+    $req->execute(array(
+        'img_link' => $img_link
     ));
     $req->closeCursor();
 }

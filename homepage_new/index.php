@@ -8,8 +8,12 @@
 /*
  * INCLUDES
  */
+//Définition des variables titre pour le <title>, css et favicon pour le <link>
+$titre = "Homepage";
+$css = "css/styles.php";
+$favicon = "img/favicon.png";
 //Contient le header
-include("includes/head.html");
+include("includes/head.php");
 //Contient la connexion à la db
 include("includes/connect_db.php");
 //Contient les fonctions
@@ -275,7 +279,7 @@ fseek($monfichier, 0); // On remet le curseur au d?but du fichier
 fputs($monfichier, $pages_vues); // On ?crit le nouveau nombre de pages vues
 fclose($monfichier);
 
-echo '<p id="compteur">Cette page a ?t? vue ' . $pages_vues . ' fois !</p>
+echo '<p id="compteur">Cette page a été vue ' . $pages_vues . ' fois !</p>
       </div>
       <!-- Compteur -->
       </footer>

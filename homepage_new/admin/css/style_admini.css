@@ -1,6 +1,6 @@
 .full {
-    color: red;
-    border-color: red;
+    color: gray;
+    border-color: gray;
 }
 body {
     font-family:"trebuchet ms",sans-serif;
@@ -47,27 +47,20 @@ input[type=submit]:active, input[type=reset]:active {
     background-color:#FCDEDE;
     box-shadow:1px 1px 1px #D83F3D inset;
 }
-#head {
-    background-color: #00b3ff;
- }
-#nav {
-    background-color: #1883ba;
+#homepage_link{
+    display: block;
+    width:30px;
+    height:30px;
+    background-image: url("../../img/home.png");
+    background-size: cover;
 }
-#games {
-    background-color: #3a768f;
-}
-#devtools {
-    background-color: #04569A;
-}
-#administratif {
-    background-color: #024378;
-}
-#divers {
-    background-color: darkblue;
+.formulaire {
+    /*background-color: #1883ba;*/
 }
 .limit_link_message {
     font-size: x-small;
 }
-.required_message {
+.required_message, .form_img, .small{
     font-size: smaller;
 }
+
