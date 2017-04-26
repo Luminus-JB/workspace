@@ -284,10 +284,13 @@ color: darkgrey;
 #signature {
 font-family: "infinite_strokeregular", "fibon_sansthin", "lane_-_narrowregular", "Arial";
 font-size: 20px;
+color: rgb(175,46,17);
 }
+
 
 #compteur {
 font-family: "infinite_strokeregular", "fibon_sansthin", "lane_-_narrowregular", "Arial";
+color: rgb(175,46,17);
 }
 
 /* Footer */

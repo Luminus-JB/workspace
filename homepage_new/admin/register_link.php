@@ -20,7 +20,7 @@ if (isset($_POST['link_head'])) {
     $img = "img_link_head";
     $table = 'link_head';
     $extensions_valides = array( 'jpg' , 'jpeg' , 'gif' , 'png' );
-    $maxsize = 15000;
+    $maxsize = 60000;
     $maxheight = 350;
     $maxwidth= 350;
 
@@ -28,7 +28,7 @@ if (isset($_POST['link_head'])) {
     $_POST['link_head'] = htmlspecialchars($_POST['link_head']);
     $_POST['name_link_head'] = htmlspecialchars($_POST['name_link_head']);
 
-    //Extrait la place du lien dans la chaine contenant la place et le nom du lien
+    //Extrait la place du lien dans la chaîne contenant la place et le nom du lien
     $_POST['head_place_number'] = substr($_POST['head_place_number'], 0, 1);
 
     //Si le lien , le nom du lien et l'image sont présentes
@@ -111,7 +111,7 @@ if (isset($_POST['add_link_head'])) {
     //Déclarations
     $table = 'link_head';
     $extensions_valides = array( 'jpg' , 'jpeg' , 'gif' , 'png' );
-    $maxsize = 15000;
+    $maxsize = 60000;
     $maxheight = 250;
     $maxwidth= 350;
 
@@ -157,7 +157,7 @@ if (isset($_POST['link_nav'])) {
     $img = "img_link_nav";
     $table = 'link_nav';
     $extensions_valides = array( 'jpg' , 'jpeg' , 'gif' , 'png' );
-    $maxsize = 15000;
+    $maxsize = 60000;
     $maxheight = 350;
     $maxwidth= 350;
 
@@ -255,7 +255,7 @@ if (isset($_POST['add_link_nav'])) {
     $img = "img_link_nav";
     $table = 'link_nav';
     $extensions_valides = array( 'jpg' , 'jpeg' , 'gif' , 'png' );
-    $maxsize = 15000;
+    $maxsize = 60000;
     $maxheight = 250;
     $maxwidth= 350;
 
@@ -302,7 +302,7 @@ if (isset($_FILES['img_games'])){
     $table = "wallpaper_games";
     $img = "img_games";
     $extensions_valides = array( 'jpg' , 'jpeg' , 'gif' , 'png' );
-    $maxsize = 35000;
+    $maxsize = 60000;
     $maxheight = 500;
     $maxwidth= 500;
 
@@ -389,7 +389,7 @@ if (isset($_FILES['img_devtools'])){
     $img = "img_devtools";
     $table = "wallpaper_devtools";
     $extensions_valides = array( 'jpg' , 'jpeg' , 'gif' , 'png' );
-    $maxsize = 35000;
+    $maxsize = 60000;
     $maxheight = 500;
     $maxwidth= 500;
     //Contient les vérification de l'image
@@ -476,7 +476,7 @@ if (isset($_FILES['img_administratif'])){
     $img = "img_administratif";
     $table = "wallpaper_administratif";
     $extensions_valides = array( 'jpg' , 'jpeg' , 'gif' , 'png' );
-    $maxsize = 35000;
+    $maxsize = 60000;
     $maxheight = 500;
     $maxwidth= 500;
     //Contient les vérification de l'image
@@ -563,7 +563,7 @@ if (isset($_FILES['img_divers'])){
     $img = "img_divers";
     $table = "wallpaper_divers";
     $extensions_valides = array( 'jpg' , 'jpeg' , 'gif' , 'png' );
-    $maxsize = 35000;
+    $maxsize = 60000;
     $maxheight = 500;
     $maxwidth= 500;
     //Contient les vérification de l'image
